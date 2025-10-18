@@ -3,6 +3,20 @@ from sqlalchemy.exc import SQLAlchemyError
 
 
 class DataManager:
+    """
+    Handles all database operations for users and movies.
+
+    Methods:
+        create_user(name): Creates a new user with a unique, non-empty name.
+        get_users(): Returns a list of all users sorted by name.
+        get_user(user_id): Retrieves a single user by ID.
+        get_movies(user_id): Returns all movies associated with a specific user.
+        get_movie(movie_id): Retrieves a single movie by its ID.
+        add_movie(movie): Adds a new movie to the database.
+        update_movie(movie_id, new_title): Updates the title of a movie if it exists.
+        delete_movie(movie_id): Deletes a movie from the database if it exists.
+    """
+
     # Create a new user
     def create_user(self, name):
         """Create a new user if the name is valid; rollback on failure."""
